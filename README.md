@@ -19,6 +19,46 @@ In this roadmap, we refer to the future major releases as follows:
 This reflects the inherant uncertainty in releases that are more than about 1 year away. In
 some cases, if progress is made more quickly, features may be moved to earlier releases.
 
+## Documentation
+
+We are choosing to list documentation as a top-level section in our roadmap to acknowledge
+both the importance of it and the painful state of our existing documentation. Because our
+documentation spans all subprojects, each of which have their own release cycles and
+versioning, the documentation roadmap doesn't have concrete version numbers associated with
+each milestone.
+
+### Next 
+
+* Hire full time and part time staff who will focus on improving our documentation.
+* Research existing tools for writing documentation (Readthedocs, Sphinx, Notebooks, etc.)
+  and evaluate which tools we use to write documentation.
+* Develop a project wide outline of our existing and proposed documentation.
+* Perform observational and survey based user studies of our documentation to guide its
+  design and development.
+* Explore and research the questions around how to maintain documentation across multiple
+  subprojects. Do we centralize all or some of our documentation? Do we keep it in separate
+  subproject repos?
+* Build publicly accessible API documentation on all commits for all JavaScript and
+  TypeScript repositories.
+
+### Next+1
+
+* Integrate Jupyter Notebooks more closely into our documentation tools.
+* Develop a formal documentation process and standard that includes technical review,
+  organizational review, design, usability testing and copy-editing.* Where needed, develop
+  additional tools for writing our documentation.
+* Work with each subproject to integrate our documentation tools and process into their
+  workflow and roadmap.
+
+### Future
+
+* Begin to block releases of subprojects until documentation meets our standards.
+* Using our new JavaScript packages and live kernels hosted in the cloud, enable
+  documentation to be runnable in place.
+* Build documentation indexing and search into the Jupyter Workbench.
+* Build tools that make it easier for downstream projects to distribute notebook based
+  documentation to users.
+
 ## Notebook
 
 ### Next (4.1)
