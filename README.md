@@ -5,7 +5,7 @@ Historically, we have published major releases every 6-9 months. With our projec
 split across many subprojects, we expect to release subprojects separately and more
 often.
 
-This roadmap only includes mainline subproject under the Jupyter
+This roadmap only includes mainline subprojects under the Jupyter
 (https://github.com/jupyter) and IPython (https://github.com/ipython) GitHub orgs. We
 also have a number of newer, experimental subprojects in the Jupyter Incubator
 (https://github.com/jupyter-incubator) organization.
@@ -16,14 +16,16 @@ In this roadmap, we refer to the future major releases as follows:
 * Next+1 (the major release after that)
 * Future (any release beyond the Next+1)
 
-This reflects the inherant uncertainty in releases that are more than about 1 year away. In
+This reflects the inherent uncertainty in releases that are more than about 1 year away. In
 some cases, if progress is made more quickly, features may be moved to earlier releases.
 
 ## Documentation
 
-We are choosing to list documentation as a top-level section in our roadmap to acknowledge
-both the importance of it and the painful state of our existing documentation. Because our
-documentation spans all subprojects, each of which have their own release cycles and
+We list documentation as a top-level section in our roadmap to acknowledge the importance
+of it for developer communication, scaling and maintenance of deployments, and early user
+adoption of new releases. The state of the existing documentation has not kept pace with
+the rapid development in our projects, and effort will be focused on improving it. Because
+our documentation spans all subprojects, each of which have their own release cycles and
 versioning, the documentation roadmap doesn't have concrete version numbers associated with
 each milestone.
 
@@ -40,6 +42,9 @@ each milestone.
   subproject repos?
 * Build publicly accessible API documentation on all commits for all JavaScript and
   TypeScript repositories.
+* Encode documentation in our project principles and community process as a core activity
+  that is part of the everyday process of development, and adopt this in an integral
+  fashion throughout the project for all project members.
 
 ### Next+1
 
@@ -73,7 +78,7 @@ each milestone.
 * Prototype of the *Jupyter Workbench*:
   - Initially, a new page in the existing notebook web-app that allows multiple
     plugins in the same browser tab.
-  - Flexible, custimizable tabbed and paneled layout system.
+  - Flexible, customizable tabbed and paneled layout system.
   - Initial plugins:
     - Menu bar.
     - Overall page layout.
@@ -106,7 +111,7 @@ each milestone.
   - Variable inspector.
   - UI for managing plugins.
 * Dashboarding of output areas and interactive widgets.
-* As, and only if, the Jupyter Workbench becomes a full replacement, deprecate existing pages in the notebook
+* If, and only if, the Jupyter Workbench becomes a full replacement, deprecate existing pages in the notebook
   web-application.
 * Real-time collaboration on the notebook, text editor, and other plugins.
 * Perform and publish accesibility audit by running an automated tool.
@@ -144,6 +149,11 @@ each milestone.
 * Looking forward to its usage in Matplotlib.
 
 ## nbconvert
+
+### Next
+
+* Bring examples of nbconvert functionality that exists in locations like @takluyver's
+  demos from last summer's Southampton workshop into the official docs.
 
 ### Future
 
