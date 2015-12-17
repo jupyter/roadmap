@@ -60,7 +60,7 @@ each milestone.
 * Begin to block releases of subprojects until documentation meets our standards.
 * Using our new JavaScript packages and live kernels hosted in the cloud, enable
   documentation to be runnable in place.
-* Build documentation indexing and search into the Jupyter Workbench.
+* Build documentation indexing and search into JupyterLab.
 * Build tools that make it easier for downstream projects to distribute notebook based
   documentation to users.
 
@@ -75,7 +75,7 @@ each milestone.
 
 ### Next+1 (5.0)
 
-* Prototype of the *Jupyter Workbench*:
+* Prototype of *JupyterLab*:
   - Initially, a new page in the existing notebook web-app that allows multiple
     plugins in the same browser tab.
   - Flexible, customizable tabbed and paneled layout system.
@@ -86,32 +86,32 @@ each milestone.
     - Text editor.
     - Terminal.
 * All new frontend work is being done as small, loosely coupled npm packages.
-* The entire Jupyter Workbench will be a set of plugins (again just npm packages)
+* All of JupyterLab will be a set of plugins (again just npm packages)
   that exchange runtime APIs.
 * Application infrastucture (keyboard shortcuts, commands, menus, layout), view
   layer, and other utilities (signals, properties, messages) provided by phosphorjs
   (http://phosphorjs.github.io/).
-* Here is a list of all the repositories in which we are developing the Jupyter Workbench:
+* Here is a list of all the repositories in which we are developing JupyterLab:
   - https://github.com/jupyter?utf8=%E2%9C%93&query=jupyter-js
 * Movement towards having stable, documented JavaScript APIs.
-* Usability and UX User survey to help us guide the design process of the Jupyter Workbench.
+* Usability and UX User survey to help us guide the design process of JupyterLab.
 * Ability to hide/show code and entire cells based on query syntax.
 
 ### Next+2
 
-* New plugins for the Jupyter Workbench:
+* New plugins for JupyterLab:
   - Standalone output area.
   - Ability to hook kernels up to text editors and output areas.
   - Themes.
 
 ### Future
 
-* New plugins for the Jupyter Workbench:
+* New plugins for JupyterLab:
   - Notebook.
   - Variable inspector.
   - UI for managing plugins.
 * Dashboarding of output areas and interactive widgets.
-* If, and only if, the Jupyter Workbench becomes a full replacement, deprecate existing pages in the notebook
+* If, and only if, JupyterLab becomes a full replacement, deprecate existing pages in the notebook
   web-application.
 * Real-time collaboration on the notebook, text editor, and other plugins.
 * Perform and publish accesibility audit by running an automated tool.
@@ -137,7 +137,7 @@ each milestone.
   using phosphor properties to abstract away the details of backbone.js models and replace
   the backbone models with phosphorjs widget-based views.
 * Transition to ES6/TypeScript.
-* Allow widgets to be used at the top-level of the Jupyter Workbench UI to create
+* Allow widgets to be used at the top-level of the JupyterLab UI to create
   dashboards.
 
 ## traitlets
