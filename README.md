@@ -167,6 +167,16 @@ each milestone.
 
 ## IPython
 
+IPython is comparatively mature, and there are consequently fewer major changes
+planned. However, we plan to:
+
+* Switch from readline to prompt_toolkit for terminal interaction; this should
+  simplify installation and provide a richer experience in the terminal.
+* Refactor the completion machinery, and investigate using
+  [Jedi](https://jedi.readthedocs.org/en/latest/) for completing in regular
+  Python code (separate completion machinery is still needed for our special
+  syntax).
+
 ## nbgrader
 
 ## nbviewer
