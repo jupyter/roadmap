@@ -150,7 +150,7 @@ each milestone.
 
 ## nbconvert
 
-### Next
+### Next (4.2)
 
 * Bring examples of nbconvert functionality that exists in locations like @takluyver's
   demos from last summer's Southampton workshop into the official docs.
@@ -161,9 +161,29 @@ each milestone.
 * Explore implementing the html output of nbconvert using node.js and the various npm packages we are creating to avoid reimplementing all of the HTML logic.
 * Implement an exporter for EPUB.
 
+
 ## JupyterHub
 
+### Next (0.4)
+
+- support user-provided inputs to Spawners via web form
+- allow users to have more than one server with different configurations
+
+### Next + 1 (0.5)
+
+- add services API for managing associated services (culling scripts, etc.)
+- provide one-way publishing/sharing mechanism
+
+### Future
+
+- Once the single-user notebook package supports realtime collaboration,
+  implement sharing mechanism integrated into the Hub.
+
+
 ## Deployment
+
+- provide reference "best practice" deployment of JuptyerHub, via Ansible scripts or otherwise
+
 
 ## IPython
 
