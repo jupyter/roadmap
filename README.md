@@ -123,22 +123,36 @@ each milestone.
 ### Next (5.0)
 
 * Improved and consistent visual style of built-in widgets.
-* Better abstractions for styling widgets using CSS and doing layout with flexbox.
+* Hands off approach to styling.  ipywidgets only provides an API for 
+  adding/removing CSS classes and the Style API.  The Style API provides the 
+  ability to set layout CSS traits in a mutable fashion. All other styling APIs 
+  are deprecated.
 * Ability to run ipywidgets outside of the notebook.
 * Initial refactoring to start to use npm for packaging the JavaScript code.
+* A new jupyter-js-widgets repository, containing all of the JS of ipywidgets.  
+  ipywidgets itself will no longer contain any JS.
+* A new interact API that behaves like Sage's equivalent.
 
-### Future
+### Next+1 (6.0)
 
-* Further decouple the JavaScript and Python kernel backend, likely moving the JavaScript
-  out of the Python repo into the Jupyter org.
+* jupyter-js-widgets will be modernized, using a modern packaging specification,
+  a modern transpiler, and offloading much of JavaScript weight lifting to third 
+  party packages.
 * Explore how we can start to treat widgets as regular output, and not have to have
   a separate widget area in the DOM.
 * Explore how the existing codebase will integrate with phosphor. In particular, explore
   using phosphor properties to abstract away the details of backbone.js models and replace
   the backbone models with phosphorjs widget-based views.
-* Transition to ES6/TypeScript.
-* Allow widgets to be used at the top-level of the JupyterLab UI to create
-  dashboards.
+* Allow widgets to be used at the top-level of the JupyterLab UI to create dashboards.
+* The model layer of the widgets will be made even more symmetric, allowing
+  widgets to be created, with traits, entirely in the front-end.  This will 
+  further support the declaritive widgets and similar work.  It will also enable
+  the mapping of typed models into the front-end to the back-end with no effort.
+
+### Future
+
+* The backbone widgets provided with jupyter-js-widgets will be moved into their 
+  own repository or will be removed altogether.
 
 ## traitlets
 
