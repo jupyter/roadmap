@@ -110,7 +110,6 @@ each milestone.
   - Notebook.
   - Variable inspector.
   - UI for managing plugins.
-* Dashboarding of output areas and interactive widgets.
 * If, and only if, JupyterLab becomes a full replacement, deprecate existing pages in the notebook
   web-application.
 * Real-time collaboration on the notebook, text editor, and other plugins.
@@ -193,11 +192,9 @@ each milestone.
 - Once the single-user notebook package supports realtime collaboration,
   implement sharing mechanism integrated into the Hub.
 
-
 ## Deployment
 
 - provide reference "best practice" deployment of JuptyerHub, via Ansible scripts or otherwise
-
 
 ## IPython
 
@@ -210,6 +207,33 @@ planned. However, we plan to:
   [Jedi](https://jedi.readthedocs.org/en/latest/) for completing in regular
   Python code (separate completion machinery is still needed for our special
   syntax).
+  
+## Dashboarding
+
+### jupyter/enhancement-proposals (now)
+
+* Create an enhancement proposal to define an extensible layout metadata schema within the Jupyter notebook document format. 
+    * Use the jupyter-incubator/dashboards and Anaconda-server/nbpresent metadata as a guide for what needs to be supported.
+
+### jupyter-incubator/dashboards (0.6.0)
+
+* Update the incubator extension to work with the new schema and deprecate support for the older `urth.layout` schema.
+* Submit an enhancement proposal to graduate the project from incubator as a "classic" Jupyter Notebook extension.
+
+### jupyter-js-plugins (>0.16.0)
+
+* Implement a dashboard layout editor/viewer in Jupyter Lab compatible with the layout metadata schema and jupyter-incubator/dashboards use of that schema to layout dashboards.
+* Improve upon the layout authoring experience afforded in the "classic" Notebook by taking advantage of the multi-view capabilities of the Jupyter Lab interface.
+
+### jupyter/notebook (>4.2)
+
+* Add a URL in the single user notebook server that shows a rendered dashboard.
+    * TODO: This is a straight copy/paste from the hackpad. Why / how did we say this would go into notebook server? The layout mechanism is one extension for classic and a separate plugin for Jupyter Lab. how would this server endpoint know what to serve up to render the dashboard? Or is this a completely separate renderer that has to be written (and why?)
+* Possibly bundle the `jupyter/dashboards` extension in a Jupyter Notebook release.
+
+### jupyter-incubator/dashboards_bundlers, jupyter-incubator/dashboards_server
+
+* For now, continue to explore the bundling and external deployment of notebooks as dashboards in incubator (e.g., security beyond trusted users).
 
 ## nbgrader
 
