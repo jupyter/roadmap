@@ -150,14 +150,23 @@ each milestone.
   the backbone models with phosphorjs widget-based views.
 * Allow widgets to be used at the top-level of the JupyterLab UI to create dashboards.
 * The model layer of the widgets will be made even more symmetric, allowing
-  widgets to be created, with traits, entirely in the front-end.  This will
-  further support the declaritive widgets and similar work.  It will also enable
+  widgets to be created, with traits, entirely in the front-end.  This will 
+  further support the declarative widgets and similar work.  It will also enable
   the mapping of typed models into the front-end to the back-end with no effort.
 
 ### Future
 
 * The backbone widgets provided with jupyter-js-widgets will be moved into their
   own repository or will be removed altogether.
+
+## Declarative widgets
+
+### Next
+
+* Decide where to draw the line between Web Components specific functionality and generic code that should live closer to ipywidgets / jupyter-js-widgets to prevent future breakage.
+* Migrate generic Python modules to ipywidgets, a new IRkernel/irwidgets, and apache/incubator-toree as appropriate.
+* Migrate generic, JS modules to jupyter-js-widgets (may be a no-op)
+* Make an enhancement proposal for moving the remaining jupyter-incubator/declarativewidgets code to jupyter/jupyter-web-components or other appropriately named repo.
 
 ## traitlets
 
