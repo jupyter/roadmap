@@ -29,7 +29,7 @@ our documentation spans all subprojects, each of which have their own release cy
 versioning, the documentation roadmap doesn't have concrete version numbers associated with
 each milestone.
 
-### Next 
+### Next
 
 * Hire full time and part time staff who will focus on improving our documentation.
 * Research existing tools for writing documentation (Readthedocs, Sphinx, Notebooks, etc.)
@@ -122,9 +122,9 @@ each milestone.
 ### Next (5.0)
 
 * Improved and consistent visual style of built-in widgets.
-* Hands off approach to styling.  ipywidgets only provides an API for 
-  adding/removing CSS classes and the Style API.  The Style API provides the 
-  ability to set layout CSS traits in a mutable fashion. All other styling APIs 
+* Hands off approach to styling.  ipywidgets only provides an API for
+  adding/removing CSS classes and the Style API.  The Style API provides the
+  ability to set layout CSS traits in a mutable fashion. All other styling APIs
   are deprecated.
 * Ability to run ipywidgets outside of the notebook.
 * Initial refactoring to start to use npm for packaging the JavaScript code.
@@ -135,7 +135,7 @@ each milestone.
 ### Next+1 (6.0)
 
 * jupyter-js-widgets will be modernized, using a modern packaging specification,
-  a modern transpiler, and offloading much of JavaScript weight lifting to third 
+  a modern transpiler, and offloading much of JavaScript weight lifting to third
   party packages.
 * Explore how we can start to treat widgets as regular output, and not have to have
   a separate widget area in the DOM.
@@ -144,13 +144,13 @@ each milestone.
   the backbone models with phosphorjs widget-based views.
 * Allow widgets to be used at the top-level of the JupyterLab UI to create dashboards.
 * The model layer of the widgets will be made even more symmetric, allowing
-  widgets to be created, with traits, entirely in the front-end.  This will 
+  widgets to be created, with traits, entirely in the front-end.  This will
   further support the declaritive widgets and similar work.  It will also enable
   the mapping of typed models into the front-end to the back-end with no effort.
 
 ### Future
 
-* The backbone widgets provided with jupyter-js-widgets will be moved into their 
+* The backbone widgets provided with jupyter-js-widgets will be moved into their
   own repository or will be removed altogether.
 
 ## traitlets
@@ -207,12 +207,12 @@ planned. However, we plan to:
   [Jedi](https://jedi.readthedocs.org/en/latest/) for completing in regular
   Python code (separate completion machinery is still needed for our special
   syntax).
-  
+
 ## Dashboarding
 
 ### jupyter/enhancement-proposals (now)
 
-* Create an enhancement proposal to define an extensible layout metadata schema within the Jupyter notebook document format. 
+* Create an enhancement proposal to define an extensible layout metadata schema within the Jupyter notebook document format.
     * Use the jupyter-incubator/dashboards and Anaconda-server/nbpresent metadata as a guide for what needs to be supported.
 
 ### jupyter-incubator/dashboards (0.6.0)
@@ -227,8 +227,8 @@ planned. However, we plan to:
 
 ### jupyter/notebook (>4.2)
 
-* Add a URL in the single user notebook server that shows a rendered dashboard.
-    * TODO: This is a straight copy/paste from the hackpad. Why / how did we say this would go into notebook server? The layout mechanism is one extension for classic and a separate plugin for Jupyter Lab. how would this server endpoint know what to serve up to render the dashboard? Or is this a completely separate renderer that has to be written (and why?)
+* Add a URL in the single user notebook server that shows a rendered dashboard given a notebook that follows the layout metadata schema.
+    * TBD what renderer implementation does the rendering at the URL (e.g., new Jupyter Lab code?)
 * Possibly bundle the `jupyter/dashboards` extension in a Jupyter Notebook release.
 
 ### jupyter-incubator/dashboards_bundlers, jupyter-incubator/dashboards_server
