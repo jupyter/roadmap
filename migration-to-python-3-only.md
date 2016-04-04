@@ -89,8 +89,8 @@ IPython and ipykernel rely on a few dependencies maintained by the same groups
 of people, in particular: `ipykernel`, `traitlets`, and `ipython_genutils`. In
 order to provide LTS support for IPython, the IPython team will provide
 patches for the packages required by IPython 5.x if they
-affect the behavior of IPython. Otherwise the normal rules apply, where only
-the stable version of these software is supported,.
+affect the behavior of IPython. Otherwise our normal conventions apply, and only
+the current stable version of these packages will be supported.
 
 
 ### Source distribution installation.
@@ -99,74 +99,69 @@ the stable version of these software is supported,.
 The Python package manager (`pip`) does not respect the `requires-python`
 metadata field, and `setuptools` does not provide a way to set a value of this
 metadata field as far as we know. This implies that if the IPython core team release a version of
-IPython that is not compatible with IPython, the end use installing ipython
-through `pip install ipython` or equivalent under python 2, will end up with a
+IPython that is not compatible with Python 2, a user installing IPython
+by running `pip install ipython` under Python 2 will end up with a
 broken installation.
 
-The we need to to fix at least the following issues for this to work:
+There is an open issue on pip to check compatibility with Python when installing
+packages:
 
     https://github.com/pypa/pip/issues/3182
 
-Note that this will not be an issue before we actually release a source version
-of a package which is not Python 2 compatible, but that we likely want to have
-this fixed in pip as soon as possible so that users have a chance to upgrade to
+This will not be an issue before we actually release a source version
+of a package which is not Python 2 compatible, but we likely want to have
+this fixed in pip as soon as possible, so that users have a chance to upgrade to
 this version **before** upgrading IPython.
 
-There are alternative ways around that, like have IPython being only a meta package,
-
-
-
+There are alternative ways around that, like making `ipython` a metapackage which
+expresses a dependency on (say) `ipython_real`
 
 
 # Notebook & Python 3 support.
 
-The way the Jupyter Protocol is designed, it is language agnostic, thus it is
-perfectly possible to imagine that the notebook server (in particular), could
-be written in a non-python language.
+The Jupyter Protocol is designed to be language agnostic, so the language the
+Notebook server (or any frontend) is written in does not have to match the
+language of code within a notebook.
 
-For the next+1 version of the Notebook (6.0), we propose to require a Python 3 environment.
+For the next+1 version of the Notebook server (6.0), we propose to require Python 3.
 
-The rational being that the notebook application is one of those that can
-benefit the most from recent Python improvement, being asyncio, `yiield from`, etc.
+The rationale being that the notebook application is one of those that can
+benefit the most from recent Python improvement, such as asyncio or function annotations.
 
 Unlike for IPython, we do not believe a LTS support is necessary, as a Python 3
 only version of the notebook application can perfectly run a Python 2 kernel.
-Thus a Python 3 only version of the notebook is technically not really dropping Python 2.
 
-In order to allow progressive transition to Python 3 for users and downstream
+In order to allow a progressive transition to Python 3 for users and downstream
 integrators, we propose to release the first Python 3 only version of the
-notebook 6 month after the first release of the Python 3 only version of IPython.
+notebook 6 months after the first release of the Python 3 only version of IPython.
 
-We propose to strongly communicate for next release of the notebook (5.0), that
-one of the next version will require a Python 3 environment.
+We propose to clearly communicate on the next release of the notebook (5.0), that
+one of the next versions will require a Python 3 environment.
 
 Timelines:
     - Notebook 5.0 – Python 2 compatible – Summer/Fall 2016
     - IPython 6.0 – Python 3 Only – Early 2017
-    – Notebook 6.0 (or 7.0) – Python 3 only – Mid 2017.
-
-
+    - Notebook 6.0 (or 7.0) – Python 3 only – Mid 2017
 
 
 ## Challenges
 
 As for IPython above; the notebook package need to be able to express that it
-requires Python 3. This is mitigated by people installing `jupyter` that we can
-make conditionally depend on different version of the notebook depending on the
-version of Python.
+requires Python 3. This is mitigated by people installing `jupyter`: we can
+make that conditionally depend on different version of `notebook`, depending on
+the version of Python.
 
-In particular for Anaconda, one of the path forward would be to bundle the
-notebook with its own python 3 interpreter. This can lead to small
+In particular for Anaconda, one path forward would be to bundle the
+notebook with its own Python 3 interpreter. This can lead to some
 inconsistency for notebook server extensions, as on Python 2 Anaconda, the
 notebook server will be in a separate environment, and the notebook extensions
 and optional dependencies need to be installed in this environment as well. We
 are thus speaking of `nbconvert`, custom exporters, custom handler and server
 side extension.
 
-The anaconda crew told us that dropping support for Python 2 will lead them to
-unbundle Jupyter from Anaconda instead of using the 2 environment trick.
-
-This is not a problem on linux and unix-like system where notebook will "just" requires Python 3.
+This is not a problem for most Linux package managers, where the norm is to
+treat Python 2 and 3 as distinct packages. In this context, the notebook will
+have a dependency on `python3`.
 
 # Not in this roadmap:
 
