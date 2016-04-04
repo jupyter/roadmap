@@ -1,12 +1,12 @@
 # Migration to Python 3 only
 
 This document discuss some of the various possibility to migrate Jupyter, and
-its reference Kernel implementation IPython toward a Python 3 only code base. 
+its reference Kernel implementation IPython, toward a Python 3 only code base.
 
-The document is not meant to debate the Jupyter & IPython project should migrate
+The document is not meant to debate whether the Jupyter & IPython project should migrate
 to a Python 3 only code base.
 
-# TL;DR: 
+# TL;DR:
 
   - ASAP: Fix Pip to refuse to install Python 3 only packages on Python 2. Extremely
     high priority as we want pip version to be release and propagate after
@@ -16,84 +16,69 @@ to a Python 3 only code base.
     - Traitlets "LTS"
     - ipykernel LTS
     - ipython_genutils LTS
-  - January 2017 : Release IPython 6.0 Python 3 only. 
+  - January 2017 : Release IPython 6.0 Python 3 only.
   - July 2017 : Release Notebook 6.0 Python 3 only.
-  - December 2017: IPython 7.0 
+  - December 2017: IPython 7.0
   - December 2017: End of active support IPython 5.x LTS
   - July 2019 : Complete end of support for IPython 5.x
 
 
 
-# Exposition of the problem
+# Statement of the problem
 
-We recognize that many user of IPython and Jupyter still need to use a Python 2
-environment, and will still need to do so for quite some time. Though as an open
-source project, the overhead in maintaining both Python 2 and 3 compatibility at
-the same time is significant, and slow the Jupyter and IPython open-source teams
-to achieve many of our goals.
+We recognize that many users of IPython and Jupyter still need to use a Python 2
+environment, and will still need to do so for quite some time. However, as an open
+source project, there is an overhead in maintaining Python 2 and 3 compatibility,
+and this slows progress on our goals.
 
-We also believe that the maturity of Python 3 is sufficient enough, and a
-sufficient number of project in the scientific community are ready to make the
-commitment to drop Python 2 support.
+We also believe that Python 3 is sufficiently mature, and enough projects in the
+scientific community are ready, to make the commitment to drop Python 2 support.
 
-We want to provide a seamless experience to current Python 3 users without
+We want to provide a seamless experience to current Python 3 users, without
 breaking any workflow and pipeline for Python 2 users. Thus we want in a
-relatively short period of time to remove the burden of support ting Python 2
-support from the core team, while preserving functionality for users. 
+relatively short period of time to remove the burden of supporting Python 2
+support from the core team, while preserving functionality for users.
 
-We also recognize that companies and laboratories may rely on Python 2, and
-want to offer solution for these too, whether they directly use, or sell
-product relying on Jupyter and IPython.
+We also recognize that there are many companies and laboratories relying on
+Python 2, and we want to offer a solution that works for them too.
 
 # IPython 5.x LTS
 
-This part concern the reference kernel implementation of Jupyter, also know as
-IPython. This specific kernel implementation also rely on `ipykernel`, `traitlets`
-and `ipython_genutils`.
+IPython is the reference kernel for Jupyter. This kernel relies on
+`ipykernel`, `traitlets` and `ipython_genutils`.
 
 We propose that the next major version cycle (5.x) of IPython be the last
-version to support Python 2. As we recognize that Python 2 is supported by the
-CPython core team until 2020, we propose to make the 5.x major cycle a Long
-Term Support version under the following intent:
+version to support Python 2. As Python 2 is supported by the CPython core team
+until 2020, we propose to make the 5.x major cycle a Long Term Support version:
 
-  - For the 18 month following the release of IPython 5.0, the core team will
-    engage in critical & security bug fix for the 5.x branch, as well as
-    regular release (both of minor and patch revision) of IPython 5.x branch.
-    This apply also to the documentation of the 5.x branch. THe core team will
-    also accept to provide reasonable support requests for the IPython 5.x
-    branch.
+  - For the 18 months following the release of IPython 5.0, the core team will
+    provide critical & security bug fixes for the 5.x branch, as well as
+    regular releases in the 5.x series.
+    This also applies to the documentation of the 5.x branch.
 
+  - For the 36 months following the release of IPython 5.0, the core team will
+    continue to review critical & security related patches, as well as
+    improvements to the documentation, and make related release if necessary. The
+    core team will make sure that the 5.x version of IPython is described in
+    our installation instructions.
 
-  - For the 36 month following the release of IPython 5.x, the core team will
-    continue to review critical & security releated patches, as well as
-    improvment to the documentation, and make related release if necessary. The
-    core team will make sure that the 5.x Version of IPython stay visible
-    various web pages mentionning how to get IPython. The core team reserve the
-    right to ignore and or close any support request, request for patch
-    integration or other communication that oes not go into the previous
-    category.
+  - The core team will fix bugs affecting IPython in the necessary versions of
+    traitlets, ipykernel and ipython_genutils - IPython's first-party
+    dependencies.
 
-  - The IPython/Jupyter team will do a best effort to provide fixes in the
-    realm of reasonable requests, and will actively try to provide upstream
-    patches if IPython missbehavior is due dependedncies, unless otherwise
-    specified. I.E, we will backport and release fix to traitlets, and
-    ipykernel only if it dirrectly affect IPython
-
-  - pass 36 month after IPython 5.0 release, IPython 5.x will be considers
+  - Past 36 months after the IPython 5.0 release, IPython 5.x will be considered
     unsupported.
 
-  - The above time lines are intent, and the IPython core team reserve the
-    right to modify them in the future.
+  - These time lines are a statement of intent; they may change in the future.
+    However, we do not plan to support Python 2 beyond its end of life in 2020.
 
-  - regardless of above statement, Python 2 support in the 5.x branch will not
-    exceed support of CPython 2.7, and be likely much shorter.
-
-  - The above statements do not apply to third party who are welcome to provide
-    open or commercial support for IPython.
+  - Third parties may support IPython on Python 2 for longer, either as a
+    commercial deal or in the open. IPython is BSD licensed, so anyone may
+    modify and redistribute the code.
 
 The above timeline would lead to a release of IPython 5.0 about mid 2016,
 leading to active 5.x LTS support until about winter 2017, and passive LTS
-support until Mid 2019.
+support until mid 2019.
 
 ## Challenges:
 
@@ -102,10 +87,10 @@ support until Mid 2019.
 
 IPython and ipykernel rely on a few dependencies maintained by the same groups
 of people, in particular: `ipykernel`, `traitlets`, and `ipython_genutils`. In
-order to provide LTS support for IPython, the IPython team, will provide
-patches for the packages requires by IPython 5.x at the condition that they
+order to provide LTS support for IPython, the IPython team will provide
+patches for the packages required by IPython 5.x if they
 affect the behavior of IPython. Otherwise the normal rules apply, where only
-the stable version of these software is supported, without guaranties of timeline.
+the stable version of these software is supported,.
 
 
 ### Source distribution installation.
@@ -127,22 +112,22 @@ of a package which is not Python 2 compatible, but that we likely want to have
 this fixed in pip as soon as possible so that users have a chance to upgrade to
 this version **before** upgrading IPython.
 
-There are alternative ways around that, like have IPython being only a meta package, 
+There are alternative ways around that, like have IPython being only a meta package,
 
 
 
 
 
-# Notebook & Python 3 support. 
+# Notebook & Python 3 support.
 
 The way the Jupyter Protocol is designed, it is language agnostic, thus it is
 perfectly possible to imagine that the notebook server (in particular), could
-be written in a non-python language. 
+be written in a non-python language.
 
-For the next+1 version of the Notebook (6.0), we propose to require a Python 3 environment. 
+For the next+1 version of the Notebook (6.0), we propose to require a Python 3 environment.
 
 The rational being that the notebook application is one of those that can
-benefit the most from recent Python improvement, being asyncio, `yiield from`, etc. 
+benefit the most from recent Python improvement, being asyncio, `yiield from`, etc.
 
 Unlike for IPython, we do not believe a LTS support is necessary, as a Python 3
 only version of the notebook application can perfectly run a Python 2 kernel.
@@ -150,10 +135,10 @@ Thus a Python 3 only version of the notebook is technically not really dropping 
 
 In order to allow progressive transition to Python 3 for users and downstream
 integrators, we propose to release the first Python 3 only version of the
-notebook 6 month after the first release of the Python 3 only version of IPython. 
+notebook 6 month after the first release of the Python 3 only version of IPython.
 
 We propose to strongly communicate for next release of the notebook (5.0), that
-one of the next version will require a Python 3 environment. 
+one of the next version will require a Python 3 environment.
 
 Timelines:
     - Notebook 5.0 – Python 2 compatible – Summer/Fall 2016
@@ -168,7 +153,7 @@ Timelines:
 As for IPython above; the notebook package need to be able to express that it
 requires Python 3. This is mitigated by people installing `jupyter` that we can
 make conditionally depend on different version of the notebook depending on the
-version of Python. 
+version of Python.
 
 In particular for Anaconda, one of the path forward would be to bundle the
 notebook with its own python 3 interpreter. This can lead to small
@@ -181,14 +166,14 @@ side extension.
 The anaconda crew told us that dropping support for Python 2 will lead them to
 unbundle Jupyter from Anaconda instead of using the 2 environment trick.
 
-This is not a problem on linux and unix-like system where notebook will "just" requires Python 3. 
+This is not a problem on linux and unix-like system where notebook will "just" requires Python 3.
 
 # Not in this roadmap:
 
 
-- `nbconvert` CLI: Can likely be migrated to Python 3 only in roughly same schedule than notebook. 
-- `nbformat` : suggest to keep Python 2 support as long as we support IPython 5.x, maybe later, to allow people to "upgrade" their notebook and read newer version on "old" notebook. 
-- `jupyter_client` : Suggest keeping some Python 2 compatibility as this might be helpful for some downstream project. 
+- `nbconvert` CLI: Can likely be migrated to Python 3 only in roughly same schedule than notebook.
+- `nbformat` : suggest to keep Python 2 support as long as we support IPython 5.x, maybe later, to allow people to "upgrade" their notebook and read newer version on "old" notebook.
+- `jupyter_client` : Suggest keeping some Python 2 compatibility as this might be helpful for some downstream project.
 - `ipyparallel`: Decision is on ipyparallel users/devs.
 - `ipywidgets`
 - `nbgrader`
@@ -201,7 +186,3 @@ This is not a problem on linux and unix-like system where notebook will "just" r
 We propose to move forward with signing the "no more legacy python pledge"
 
 https://gist.github.com/brettcannon/2f6926dc6a7874478ccd
-
-
-
-
