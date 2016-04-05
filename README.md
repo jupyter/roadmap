@@ -190,7 +190,7 @@ JupyterHub constellation of repos may move to top-level jupyterhub org on GitHub
 
 #### Reference Deployments
 
-Start with two refrence deployments:
+Start with two reference deployments:
 
 - common best practices
     - letsencrypt
