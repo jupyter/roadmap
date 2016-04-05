@@ -117,7 +117,13 @@ each milestone.
 * Perform and publish accesibility audit by running an automated tool.
 * Bring our core plugins up to the level of the Web Accessibility Standards
   (http://www.w3.org/standards/webdesign/accessibility)
-
+* Address the [2015 UX survey findings](https://github.com/jupyter/design/blob/master/surveys/2015-notebook-ux/analysis/report_dashboard.ipynb)
+    * Version control (via git in particular)
+    * Robust text and code editing (like in Emacs, Vim, Sublime, PyCharm)
+    * Advanced code development tools (debugging, profiling, variable watching, code modularization)
+    * Simpler export and deployment options (one-click transformations to slides, scripts, reports)
+    * Improved installation guides, usage tutorials, and within-tool help
+      
 ## ipywidgets
 
 ### Next (5.0)
