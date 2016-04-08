@@ -141,7 +141,10 @@ each milestone.
 
 ### Next+1 (6.0)
 
-* Transition to ES6 or TypeScript.
+* Unit tests for jupyter-js-widgets individual widgets
+* Unit tests for widgetsnbextension, especially manager.js
+* Enable a modern transpiler, either ES6 or TypeScript.  Gradually transition
+  the code as we make changes elsewhere.
 * Evaluate and possibly transition the codebase to use modern Javascript
   standards.  Linting tools (i.e. eslint) should be used to assist developers
   into complying to said standard.
@@ -179,7 +182,7 @@ each milestone.
 
 ## nbconvert
 
-### Next
+### Next (4.2)
 
 * Bring examples of nbconvert functionality that exists in locations like @takluyver's
   demos from last summer's Southampton workshop into the official docs.
