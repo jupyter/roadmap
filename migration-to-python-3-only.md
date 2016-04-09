@@ -8,10 +8,10 @@ to a Python 3 only code base.
 
 # TL;DR:
 
-  - ASAP: Fix Pip to refuse to install Python 3 only packages on Python 2. Extremely
+  - High Priority: Fix Pip to refuse to install Python 3 only packages on Python 2. Extremely
     high priority as we want pip version to be release and propagate after
     that.
-  - ASAP: Fix Setuptools to be able to express `requires-python` in `setup.py`.
+  - High Priority: Fix Setuptools to be able to express `requires-python` in `setup.py`.
   - June 2016 : Release IPython 5.0 LTS
     - Traitlets "LTS"
     - ipykernel LTS
@@ -116,6 +116,35 @@ this version **before** upgrading IPython.
 There are alternative ways around that, like making `ipython` a metapackage which
 expresses a dependency on (say) `ipython_real`
 
+#### multiple source distribution
+
+Alternatively `pip` seem to have a hidden "feature": Source distribution which
+base name ends in `-pyX.Y` are considered for installation only on matching
+Python version. Thus instead of publishing a single `.tar.gz` the core team
+could publish multiple identical source distribution with various name.
+
+For supported python version:
+
+  - ipython-6.x-py3.4.tar.gz
+  - ipython-6.x-py3.5.tar.gz
+
+For future python versions:
+
+  - ipython-6.x-py3.6.tar.gz
+  - ipython-6.x-py3.6.tar.gz
+
+
+#### Non installable source distribution.
+
+Rely on above feature, but publish a `ipython-6.x-py3.tar.gz` without specific
+version number, that will never be considered by pip (with current
+implementation) as pip matched the major **and minor** version. If `pip` change
+this behavior to match only the major if minor is absent, this version will
+still be installable and behave as expected.
+
+It is also less confusing for downstream distributor that will only see 1
+available source.
+
 
 # Notebook & Python 3 support.
 
@@ -181,3 +210,8 @@ have a dependency on `python3`.
 We propose to move forward with signing the "no more legacy python pledge"
 
 https://gist.github.com/brettcannon/2f6926dc6a7874478ccd
+
+
+Scikit-bio rfc to drop Python 2 support:
+
+https://github.com/biocore/scikit-bio-rfcs/blob/master/active/002-py3-only.md
