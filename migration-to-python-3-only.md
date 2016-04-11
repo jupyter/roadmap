@@ -1,10 +1,12 @@
 # Migration to Python 3 only
 
-This document discuss some of the various possibility to migrate Jupyter, and
-its reference Kernel implementation IPython, toward a Python 3 only code base.
+This document discuss some of the various possibilities to migrate Jupyter, and
+its reference Kernel implementation IPython, toward a Python 3 only code base,
+without breaking installation for Python 2 users.
 
 The document is not meant to debate whether the Jupyter & IPython project should migrate
-to a Python 3 only code base.
+to a Python 3 only code base, but the timeline of such a migration.
+
 
 # TL;DR:
 
@@ -31,13 +33,15 @@ environment, and will still need to do so for quite some time. However, as an op
 source project, there is an overhead in maintaining Python 2 and 3 compatibility,
 and this slows progress on our goals.
 
-We also believe that Python 3 is sufficiently mature, and enough projects in the
-scientific community are ready, to make the commitment to drop Python 2 support.
+We also believe that Python 3 is sufficiently mature, and enough projects in
+the scientific community are ready, to make the commitment to stop having new
+release with active Python 2 support.
 
 We want to provide a seamless experience to current Python 3 users, without
-breaking any workflow and pipeline for Python 2 users. Thus we want in a
-relatively short period of time to remove the burden of supporting Python 2
-support from the core team, while preserving functionality for users.
+breaking any workflow and pipeline and installation for Python 2 users. Thus we
+want in a relatively short period of time to remove the burden of supporting
+Python 2 support from the core team, while preserving functionality for users
+of both Python 2 and Python 3.
 
 We also recognize that there are many companies and laboratories relying on
 Python 2, and we want to offer a solution that works for them too.
@@ -48,7 +52,7 @@ IPython is the reference kernel for Jupyter. This kernel relies on
 `ipykernel`, `traitlets` and `ipython_genutils`.
 
 We propose that the next major version cycle (5.x) of IPython be the last
-version to support Python 2. As Python 2 is supported by the CPython core team
+major version branch to support Python 2. As Python 2 is supported by the CPython core team
 until 2020, we propose to make the 5.x major cycle a Long Term Support version:
 
   - For the 18 months following the release of IPython 5.0, the core team will
@@ -205,6 +209,16 @@ have a dependency on `python3`.
 - `jupyter_console`
 
 
+# Alternatives not discussed:
+
+- keep Python 2 support: unless an external entity comes with sufficient
+  contributions for a longer enough amount of time to IPython/Jupyter and offer
+  to support Python 2, Python 2 support will be discontinued.
+
+- Is there a way to develop using Python 3 only and have a 3to2 conversion
+  process to generate Python 2 compatible versions.
+
+
 # Misc
 
 We propose to move forward with signing the "no more legacy python pledge"
@@ -215,3 +229,8 @@ https://gist.github.com/brettcannon/2f6926dc6a7874478ccd
 Scikit-bio rfc to drop Python 2 support:
 
 https://github.com/biocore/scikit-bio-rfcs/blob/master/active/002-py3-only.md
+
+
+ - Make it explicit on website, PyPI, GitHub, and documentations that 5.x is LTS for Python 2.
+ - Make it explicit on IPython 5.x install that it is LTS, and that IPython 6.0 is/will be Python 3 only.
+
