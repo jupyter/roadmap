@@ -221,9 +221,11 @@ have a dependency on `python3`.
 
 # Misc
 
-We propose to move forward with signing the "no more legacy python pledge"
+We propose to move forward with signing something similar to "no more legacy python pledge"
 
 https://gist.github.com/brettcannon/2f6926dc6a7874478ccd
+
+Which text should be refined and get feedback from both Python 2 and 3 supporters.
 
 
 Scikit-bio rfc to drop Python 2 support:
