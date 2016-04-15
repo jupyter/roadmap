@@ -120,14 +120,14 @@ this version **before** upgrading IPython.
 There are alternative ways around that, like making `ipython` a metapackage which
 expresses a dependency on (say) `ipython_real`
 
-#### multiple source distribution
+#### Multiple source distributions
 
-Alternatively `pip` seem to have a hidden "feature": Source distribution which
-base name ends in `-pyX.Y` are considered for installation only on matching
-Python version. Thus instead of publishing a single `.tar.gz` the core team
-could publish multiple identical source distribution with various name.
+Alternatively, we could use a hidden feature of `pip`. Source distributions whose
+base name ends in `-pyX.Y` are considered for installation only on a matching
+Python version. Thus instead of publishing a single `.tar.gz`, we
+could publish multiple identical source distribution with various names.
 
-For supported python version:
+For supported python versions:
 
   - ipython-6.x-py3.4.tar.gz
   - ipython-6.x-py3.5.tar.gz
@@ -135,20 +135,11 @@ For supported python version:
 For future python versions:
 
   - ipython-6.x-py3.6.tar.gz
-  - ipython-6.x-py3.6.tar.gz
+  - ipython-6.x-py3.7.tar.gz
 
 
-#### Non installable source distribution.
-
-Rely on above feature, but publish a `ipython-6.x-py3.tar.gz` without specific
-version number, that will never be considered by pip (with current
-implementation) as pip matched the major **and minor** version. If `pip` change
-this behavior to match only the major if minor is absent, this version will
-still be installable and behave as expected.
-
-It is also less confusing for downstream distributor that will only see 1
-available source.
-
+It may be possible to patch pip to handle a more general form like
+`ipython-6.x-py3.tar.gz`, so we only need to publish a single sdist.
 
 # Notebook & Python 3 support.
 
@@ -235,4 +226,3 @@ https://github.com/biocore/scikit-bio-rfcs/blob/master/active/002-py3-only.md
 
  - Make it explicit on website, PyPI, GitHub, and documentations that 5.x is LTS for Python 2.
  - Make it explicit on IPython 5.x install that it is LTS, and that IPython 6.0 is/will be Python 3 only.
-
