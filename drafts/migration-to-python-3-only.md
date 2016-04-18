@@ -8,7 +8,7 @@ The document is not meant to debate whether the Jupyter & IPython project should
 to a Python 3 only code base, but the timeline of such a migration.
 
 
-# TL;DR:
+# Too long, Didn't read (TL;DR:).
 
   - High Priority: Fix Pip to refuse to install Python 3 only packages on Python 2. Extremely
     high priority as we want pip version to be release and propagate after
