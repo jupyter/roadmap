@@ -168,7 +168,7 @@ each milestone.
 * Migrate accompanying Python modules to ipywidgets.
 * Graduate the declarativewidgets from the incubator.  Specifically the move jupyter-incubator/declarativewidgets code to jupyter/jupyter-web-components or another appropriately named repo.
 * Investigate with the jupyter/notebook team about upstreaming a generic bower/npm restful API.
-* Move the R code into the IRkernel and the Scala code into Gino's Scala kernel.
+* Move the R code into the IRkernel and the Scala code into Apache Toree or related project.
 
 ## traitlets
 
