@@ -30,3 +30,12 @@ considered canonical, and data from the companion file may be discarded.
   format deliberately, so that tools like git do not try to diff or merge it as
   a text file. At the same time, it's possible that e.g. Github could offer a
   nicer UI showing the contents of the zip file.
+
+An alternate option could be to have the companion file be essentially the ipynb itself with the widget state in the metadata. On save, you would get something like:
+
+`foobar.ipynb` (no widget state)
+`foobar.full.ipynb` (contains widget state etc)
+
+To avoid the churn, we could also decide to remove anything that is output from the first one. A default `.gitignore` would ignore the full version, but you could still send it by email to someone with the inline figures an all.
+
+The widget state in the full file could be encoded in base64...
