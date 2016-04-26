@@ -39,3 +39,12 @@ An alternate option could be to have the companion file be essentially the ipynb
 To avoid the churn, we could also decide to remove anything that is output from the first one. A default `.gitignore` would ignore the full version, but you could still send it by email to someone with the inline figures an all.
 
 The widget state in the full file could be encoded in base64...
+
+Questions still to be clarified:
+
+* What would the filename conventions be inside the zip file? e.g. companion.zip/jupyter-js-widgets.json and a companion.zip/metadata/ sub-folder for user things?
+
+* To avoid implementing a new storage format for these companion files, and yet have one that is well supported, look at [asar](https://github.com/electron/asar). Asar:
+
+  - Supports random access
+  - Uses JSON to store files' information
