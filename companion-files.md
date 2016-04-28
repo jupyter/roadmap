@@ -3,21 +3,21 @@
 Discussed Spring 2016, will require new versions of notebook and ?nbformat.
 
 We want to store more volatile information such as widget existence and state
-when saving notebooks. However, putting this kind of data in .ipynb files
+when saving notebooks. However, putting this kind of data in `.ipynb` files
 would make storing them in version control really inconvenient. We know that
 version controlling notebooks is already somewhat painful, and we don't want to
 make it worse.
 
 *Companion files* are how we intend to solve this. On save, if there is any data
-to store in it, a companion file will be written next to the .ipynb file.
+to store in it, a companion file will be written next to the `.ipynb` file.
 On load, if a companion file exists, its data will be recombined with the
-notebook file as far as possible. Where they do not match up, the .ipynb is
+notebook file as far as possible. Where they do not match up, the `.ipynb` is
 considered canonical, and data from the companion file may be discarded.
 
 * The companion file will be used by ipywidgets to store widget state, but is
   also available to use for other data.
 * We may introduce an option to store large/binary(/all?) outputs in the
-  companion file rather than base64 encoded in the .ipynb file.
+  companion file rather than base64 encoded in the `.ipynb` file.
 * Companion files are designed to be excluded from version control; if checked
   in, they should be treated as a blob of binary data, and not subject to
   line-based diffing and merging.
@@ -30,3 +30,20 @@ considered canonical, and data from the companion file may be discarded.
   format deliberately, so that tools like git do not try to diff or merge it as
   a text file. At the same time, it's possible that e.g. Github could offer a
   nicer UI showing the contents of the zip file.
+
+An alternate option could be to have the companion file be essentially the ipynb itself with the widget state in the metadata. On save, you would get something like:
+
+`foobar.ipynb` (no widget state)
+`foobar.full.ipynb` (contains widget state etc)
+
+To avoid the churn, we could also decide to remove anything that is output from the first one. A default `.gitignore` would ignore the full version, but you could still send it by email to someone with the inline figures an all.
+
+The widget state in the full file could be encoded in base64...
+
+### Questions still to be clarified
+
+* What would the filename conventions be inside the zip file? e.g. companion.zip/jupyter-js-widgets.json and a companion.zip/metadata/ sub-folder for user things?
+
+### Notes
+
+* In [PR 19](https://github.com/jupyter/roadmap/pull/19) we discussed the possibility of using [asar](https://github.com/electron/asar) instead of zip.  For now, in the interest of simplicity of the main Python implementation, we'll stick to zip (which works out of the box in Python and is widely supported).  We can revisit the asar idea later if zip proves problematic in practice.
