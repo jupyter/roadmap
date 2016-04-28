@@ -40,11 +40,10 @@ To avoid the churn, we could also decide to remove anything that is output from 
 
 The widget state in the full file could be encoded in base64...
 
-Questions still to be clarified:
+### Questions still to be clarified
 
 * What would the filename conventions be inside the zip file? e.g. companion.zip/jupyter-js-widgets.json and a companion.zip/metadata/ sub-folder for user things?
 
-* To avoid implementing a new storage format for these companion files, and yet have one that is well supported, look at [asar](https://github.com/electron/asar). Asar:
+### Notes
 
-  - Supports random access
-  - Uses JSON to store files' information
+* In [PR 19](https://github.com/jupyter/roadmap/pull/19) we discussed the possibility of using [asar](https://github.com/electron/asar) instead of zip.  For now, in the interest of simplicity of the main Python implementation, we'll stick to zip (which works out of the box in Python and is widely supported).  We can revisit the asar idea later if zip proves problematic in practice.
