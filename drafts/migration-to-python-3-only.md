@@ -10,10 +10,10 @@ to a Python 3 only code base, but the timeline of such a migration.
 
 # Too long, Didn't read (TL;DR:).
 
-  - High Priority: Fix Pip to refuse to install Python 3 only packages on Python 2. Extremely
-    high priority as we want pip version to be release and propagate after
-    that.
-  - High Priority: Fix Setuptools to be able to express `requires-python` in `setup.py`.
+  - High Priority: Fix Pip to refuse to install Python 3 only packages on
+    Python 2. Or to accept the `py3` only suffix on source distributions. High
+    priority as we want pip version to be release and propagate after that. But
+    it is not a requirement that have to be done before IPython 6.0.
   - June 2016 : Release IPython 5.0 LTS
     - Traitlets "LTS"
     - ipykernel LTS
@@ -191,7 +191,9 @@ have a dependency on `python3`.
 
 
 - `nbconvert` CLI: Can likely be migrated to Python 3 only in roughly same schedule than notebook.
-- `nbformat` : suggest to keep Python 2 support as long as we support IPython 5.x, maybe later, to allow people to "upgrade" their notebook and read newer version on "old" notebook.
+- `nbformat` : keep Python 2 support as long as we support IPython
+  5.x, maybe later, to allow people to "upgrade" their notebook and read newer
+  version on "old" notebook.
 - `jupyter_client` : Suggest keeping some Python 2 compatibility as this might be helpful for some downstream project.
 - `ipyparallel`: Decision is on ipyparallel users/devs.
 - `ipywidgets`
