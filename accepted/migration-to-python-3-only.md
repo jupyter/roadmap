@@ -224,7 +224,7 @@ Which text should be refined and get feedback from both Python 2 and 3 supporter
 
 Scikit-bio rfc to drop Python 2 support:
 
-https://github.com/biocore/scikit-bio-rfcs/blob/master/active/002-py3-only.md
+https://github.com/biocore/scikit-bio-rfcs/blob/master/accepted/002-py3-only.md
 
 
  - Make it explicit on website, PyPI, GitHub, and documentations that 5.x is LTS for Python 2.
