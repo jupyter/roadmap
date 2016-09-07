@@ -197,7 +197,7 @@ each milestone.
   widgets will remain as-is, but will connect to this layer instead of to comms
   directly.
 
-* Regarding embeddable widgets, enable a mechanism for it to work with custom widget models and views to without having to manually put more with script tags on the page. We discussed multiple approaches during our meeting on the integration of a module version number so that we could compose npmcdn urls for custom models.
+* Regarding embeddable widgets, enable a mechanism for it to work with custom widget models and views to without having to manually put more with script tags on the page. We discussed multiple approaches during our meeting on the integration of a module version number so that we could compose unpkg urls for custom models.
 
 * Datetime and Date traits with serialization + Date picker and date time picker. The date traits should work with the time-zone issues between browser and backend as discussed earlier.
 
