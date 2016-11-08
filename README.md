@@ -19,15 +19,17 @@ In this roadmap, we refer to the future major releases as follows:
 This reflects the inherent uncertainty in releases that are more than about 1 year away. In
 some cases, if progress is made more quickly, features may be moved to earlier releases.
 
-## nbgrader
+## Subprojects ##
 
-## nbviewer
-
-## Notebook document
-
-## Kernel specification
-
-Implement a way for static resources (js, css, images, etc.) to be fetched based on the kernel for use by frontends (notebook, thebe, etc.).
-
-## Message specification
-
+* [IPython](ipython.md)
+* [Jupyter Notebook](notebook.md)
+* [JupyterHub](jupyterhub.md)
+* [Documentation](documentation.md)
+* [Deployment](deployment.md)
+* [ipywidgets](ipywidgets.md)
+* [Declarative Widgets](declarativewidgets.md)
+* [nbconvert](nbconvert.md)
+* [qtconsole](qtconsole.md)
+* [Dashboards](dashboards.md)
+* [Traitlets](traitlets.md)
+* [Other Things](other.md)
