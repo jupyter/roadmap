@@ -1,53 +1,8 @@
 ## JupyterHub
 
-### Not tied to releases
 
-JupyterHub constellation of repos may move to top-level jupyterhub org on GitHub.
+### Next (0.8)
 
-- jupyterhub itself
-- spawners
-- authenticators
-- reference deployments
-- configurable-http-proxy
-
-#### Reference Deployments
-
-Start with two reference deployments:
-
-- common best practices
-    - letsencrypt
-    - nginx out front
-    - postgres for db
-- single machine nbgrader, no docker
-    - ansible
-    - local users, optionally GitHub auth
-    - based on Brian's https://github.com/calpolydatascience/jupyterhub-deploy-data301
-- docker, no nbgrader
-    - docker-compose
-    - GitHub OAuth
-
-
-### Next (0.7)
-
-The main feature of 0.7 will be the addition of Services.
-
-- A Service is a process that interacts with JupyterHub and is managed by the Hub process.
-- A service MAY:
-   - use the Hub REST API with an authentication token
-   - run an HTTP server that is added to the Hub proxy
-   - authenticate HTTP requests with GitHub users in a manner similar to the single-user server
-- Enhancements will include:
-   - The ability to launch services, provided an auth token for the REST API as a specified user
-   - An importable implementation of authentication with the Hub
-- Examples:
-   - `cull_idle_servers` example script which shuts down servers that have been idle for a period of time
-    - uses Hub REST API as an administrator for starting
-   - nbgrader formgrader
-     - uses Hub auth to specify graders
-  - Hub statistics (compmodels/stats)
-
-
-### Next + 1 (0.8)
 
 The main feature of 0.8 will be the addition of a sharing service.
 
@@ -65,6 +20,18 @@ Users should be able to:
   - Adding/removing a user to/from a team gives/removes them access to all projects that team has access to.
 - Build other services, such as static HTML publishing and dashboarding on top of these things.
 - Enter into real-time collaboration mode for a project that starts a shared execution context.
+
+In JupyterHub itself, we will also allow users to have multiple servers running at once,
+e.g. with different configurations. Questions for this:
+
+- how to express server list to users
+- avoid adding complexity to the common case of minimizing the role of JupyterHub for deployments where all people want is a login page for a single notebook server without adding complexity.
+
+JupyterHub will also add some features relating to resource monitoring and management:
+
+- (prometheus?) API for resource monitoring
+- tracking activity on single-user servers instead of the proxy
+- add API for proxies to allow implementations other than configurable-http-proxy
 
 ### Future
 
