@@ -38,7 +38,7 @@
 	  * During this phase, we will continue to work on porting nbextensions to JupyterLab and building the bridge layers.
 	  * Explicit that people can request help for porting extensions.
 	  * *Criteria for transition to phase 2:*
-		1. Jupyter Lab has all the primary functionality of the classic notebook interface.
+		1. Jupyter Lab has all the primary functionality of the classic notebook interface.  We are tracking notebook feature parity issues with a combination of [labels](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aopen+is%3Aissue+label%3A%22cat%3AFeature+Parity%22+label%3Acomponent%3ANotebook).
 		1. Jupyter Lab offers some interesting features beyond the classic interface.
 		1. At least some important, popular extensions are ported / bridged to Jupyter Lab.
 		1. Documentation and examples exist for creating Jupyter Lab plug-ins.
