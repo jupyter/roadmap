@@ -4,7 +4,7 @@ Exploring where Jupyter protocols, formats, and UI need to adapt to make it so t
 
 This is a culmination of feedback, in progress initiatives, and further R&D that needs to be done to improve how Jupyter provides a wonderful ecosystem for Spark, Hadoop, and other cluster tooling.
 
-## Asynchronous/Background Outputs
+## Asynchronous/Background Outputs ✅
 
 For environments like Spark and Dask, when a job or multiple jobs are submitted, they provide a progress bar for the jobs with a way to cancel the overall job. They also provide links to external UI (Spark UI or Dask UI). When finished, you’re able to see the resulting table view.
 
@@ -14,6 +14,10 @@ As far as Jupyter is concerned, there are things we can do to make updating a di
 - Routing background outputs: https://github.com/ipython/ipython/issues/9969
 - Ability to update prior displays: https://github.com/jupyter/jupyter_client/issues/209
 
+Progress:
+
+* [Outputs can now be updated by named display](https://github.com/jupyter/jupyter_client/issues/209)
+
 ## Progress Bar Primitives
 
 As discussed above in the Async Outputs section, we should seek to provide simple clean-cut library tooling for creating progress bars in the frontend. This is not to seek a replacement of e.g. [tqdm](https://github.com/noamraph/tqdm), but to provide the necessary additions to the messaging spec (whether an actual message or a specific versioned mimetype).
@@ -21,7 +25,9 @@ As discussed above in the Async Outputs section, we should seek to provide simpl
 The nested structure for Spark Jobs is something we can likely represent with a clean format for nested content with progress bars and external links.
 
 Approaches:
+
 - https://github.com/mozilla/jupyter-spark
+- [Progress monitor](https://github.com/jupyter/jupyter_client/issues/209#issuecomment-260789525)
 
 ## Cluster/computational Context
 
