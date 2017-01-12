@@ -29,6 +29,10 @@ Approaches:
 - https://github.com/mozilla/jupyter-spark
 - [Progress monitor](https://github.com/jupyter/jupyter_client/issues/209#issuecomment-260789525)
 
+## Cancellable execution
+
+The Jupyter protocols currently support interrupting execution on kernels. Spark focused notebook UIs, including DataBricks and Zeppelin both have a UI for cancelling execution within the cells and showing progress. 
+
 ## Cluster/computational Context
 
 Users need a way to get context about their running spark setup, because you’re dealing with an extra remote resource beyond the kernels. They tend to want to know:
@@ -89,11 +93,19 @@ There are a couple approaches to this right now, including mime types for plotly
 
 There's also the [spark magics incubation project](https://github.com/jupyter-incubator/sparkmagic).
 
+Progress:
+
+* nteract has direct support of custom mimetypes for vega, vega-lite, and plotly's JSON spec.
+* There are JupyterLab extensions for vega, vega-lite, and Plotly
+* Pandas is working on supporting a well specified schema for exported tables (row-oriented JSON) within [pandas#14904](https://github.com/pandas-dev/pandas/pull/14904)
+
 ## Scala Kernel
 
 Massive effort needs to be put into making the Scala kernel(s) for Jupyter first class citizens. Competitive angle: It should be so good that Zeppelin or Beaker would adopt it (or create it) and contribute to it. Current contenders:
+
 - https://github.com/alexarchambault/jupyter-scala
 - https://toree.incubator.apache.org/documentation/user/quick-start
+- https://github.com/mariusvniekerk/spylon-kernel
 
 ## Style of error reporting
 
