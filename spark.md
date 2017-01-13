@@ -116,3 +116,7 @@ At a minimum, we should expose links and/or popups to the spark driver’s stdou
 ## POC ➡️  Production
 
 This part is more JVM centric and not language agnostic - people need a way to turn code segments into a Scala class, compile it, and generate a JAR. My knowledge of how this can be done is fairly old/outdated.
+
+## Provide Architectural Recommendations for Jupyter and Spark
+
+Due to the particular networking requirements of Spark, running Jupyter with Spark tends to have a lot of moving pieces as well as recommendations. We need to provide solid narrative documentation that helps people determine precisely what they need.
