@@ -1,10 +1,8 @@
 ## JupyterHub
 
+### HubShare
 
-### Next (0.8)
-
-
-The main feature of 0.8 will be the addition of a sharing service.
+HubShare will be a sharing service for use with JupyterHub.
 
 Users should be able to:
 
@@ -19,21 +17,20 @@ Users should be able to:
 - Define and manage teams of users.
   - Adding/removing a user to/from a team gives/removes them access to all projects that team has access to.
 - Build other services, such as static HTML publishing and dashboarding on top of these things.
-- Enter into real-time collaboration mode for a project that starts a shared execution context.
 
-In JupyterHub itself, we will also allow users to have multiple servers running at once,
-e.g. with different configurations. Questions for this:
 
-- how to express server list to users
-- avoid adding complexity to the common case of minimizing the role of JupyterHub for deployments where all people want is a login page for a single notebook server without adding complexity.
+### Next (0.9)
 
 JupyterHub will also add some features relating to resource monitoring and management:
 
 - (prometheus?) API for resource monitoring
 - tracking activity on single-user servers instead of the proxy
-- add API for proxies to allow implementations other than configurable-http-proxy
+- notes and activity tracking per API token
+- UI for managing named servers
 
 ### Future
 
+- Enter into real-time collaboration mode for a project that starts a shared execution context.
 - Once the single-user notebook package supports realtime collaboration,
   implement sharing mechanism integrated into the Hub.
+
