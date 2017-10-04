@@ -18,7 +18,7 @@ Progress:
 
 * [Outputs can now be updated by named display](https://github.com/jupyter/jupyter_client/issues/209)
 
-## Progress Bar Primitives
+## Progress Bar Primitives ✅
 
 As discussed above in the Async Outputs section, we should seek to provide simple clean-cut library tooling for creating progress bars in the frontend. This is not to seek a replacement of e.g. [tqdm](https://github.com/noamraph/tqdm), but to provide the necessary additions to the messaging spec (whether an actual message or a specific versioned mimetype).
 
@@ -28,6 +28,11 @@ Approaches:
 
 - https://github.com/mozilla/jupyter-spark
 - [Progress monitor](https://github.com/jupyter/jupyter_client/issues/209#issuecomment-260789525)
+
+Progress:
+
+* [ProgressBar](https://github.com/ipython/ipython/blob/345d51130aec9644dbeb08c3e54d93f83babbf3f/IPython/core/display.py#L732) is now available in the IPython library
+* [VDOM](https://github.com/nteract/vdom) + updatable displays make this super easy, see https://github.com/nteract/nteract/blob/master/packages/desktop/example-notebooks/vdom.ipynb
 
 ## Cancellable execution
 
@@ -45,6 +50,10 @@ Many users want to think in terms of “clusters” and a notebook that is attac
 notebook ← → kernel ← → cluster (or other background resources)
 
 This can be a cognitive burden for the user. One way of solving this is to have “kernels” that are assumed to be attached to clusters.
+
+Progress:
+
+* [Resource Info Request](https://github.com/jupyter/jupyter/issues/264)
 
 ## Kernel Startup and Background Resources
 
