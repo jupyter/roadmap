@@ -31,7 +31,7 @@ Approaches:
 
 Progress:
 
-* [ProgressBar](https://github.com/ipython/ipython/blob/345d51130aec9644dbeb08c3e54d93f83babbf3f/IPython/core/display.py#L732) is now a builtin on the IPython library
+* [ProgressBar](https://github.com/ipython/ipython/blob/345d51130aec9644dbeb08c3e54d93f83babbf3f/IPython/core/display.py#L732) is now available in the IPython library
 * [VDOM](https://github.com/nteract/vdom) + updatable displays make this super easy, see https://github.com/nteract/nteract/blob/master/packages/desktop/example-notebooks/vdom.ipynb
 
 ## Cancellable execution
