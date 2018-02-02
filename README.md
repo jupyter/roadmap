@@ -23,6 +23,7 @@ some cases, if progress is made more quickly, features may be moved to earlier r
 
 * [IPython](ipython.md)
 * [Jupyter Notebook](notebook.md)
+* [JupyterLab](jupyterlab.md)
 * [JupyterHub](jupyterhub.md)
 * [Documentation](documentation.md)
 * [Deployment](deployment.md)
