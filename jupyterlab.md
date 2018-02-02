@@ -23,7 +23,7 @@
 
 
 ## 1.0 Release
-* Feature parity with the classic notebook. We are tracking notebook feature parity issues with a combination of [labels](https://github.com/jupyterlab/jupyterlab/issues?q=is%3Aopen+is%3Aissue+label%3A%22cat%3AFeature+Parity%22+label%3Acomponent%3ANotebook).
+* Feature parity with the classic notebook. We are tracking notebook feature parity issues with a combination of [labels](https://github.com/jupyterlab/jupyterlab/issues?q=is:open+is:issue+label:"tag:Feature+Parity"+label:pkg:Notebook).
 * Settings system.
 * Work on porting nbextensions to JupyterLab and building the bridge layers.
 * Theme switching.
