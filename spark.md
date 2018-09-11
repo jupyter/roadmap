@@ -104,15 +104,17 @@ There's also the [spark magics incubation project](https://github.com/jupyter-in
 
 Progress:
 
-* nteract has direct support of custom mimetypes for vega, vega-lite, and plotly's JSON spec.
+* nteract has direct support of custom media types for vega, vega-lite, and plotly's JSON spec.
 * There are JupyterLab extensions for vega, vega-lite, and Plotly
-* Pandas is working on supporting a well specified schema for exported tables (row-oriented JSON) within [pandas#14904](https://github.com/pandas-dev/pandas/pull/14904)
+* Pandas has adopted a well specified schema for exported tables (row-oriented JSON) within [pandas#14904](https://github.com/pandas-dev/pandas/pull/14904)
+* [nteract has a data explorer](https://blog.nteract.io/designing-the-nteract-data-explorer-f4476d53f897) that is continuing to be invested in
+
 
 ## Scala Kernel
 
 Massive effort needs to be put into making the Scala kernel(s) for Jupyter first class citizens. Competitive angle: It should be so good that Zeppelin or Beaker would adopt it (or create it) and contribute to it. Current contenders:
 
-- https://github.com/alexarchambault/jupyter-scala
+- https://github.com/jupyter-scala/jupyter-scala
 - https://toree.incubator.apache.org/documentation/user/quick-start
 - https://github.com/mariusvniekerk/spylon-kernel
 
