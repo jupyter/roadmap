@@ -27,16 +27,17 @@
 * Settings system.
 * Work on porting nbextensions to JupyterLab and building the bridge layers.
 * Theme switching.
-* Ability to hook kernels up to output areas.
 * UI for managing plugins.
 
 
 ## Future
-* Variable inspector.
+* [Variable inspector](https://github.com/jupyterlab/jupyterlab/issues/443).
 * Real-time collaboration on the notebook, text editor, and other plugins.  This includes a server-side model of notebook and text documents.  Discussion around the topic can be found [here](https://github.com/jupyterlab/jupyterlab/issues/5382).
+* [Dashboarding](https://github.com/jupyterlab/jupyterlab/issues/1640).
 * Perform and publish accesibility audit by running an automated tool.
 * Bring our core plugins up to the level of the Web Accessibility Standards
   (http://www.w3.org/standards/webdesign/accessibility)
+* Ability to hook kernels up to output areas.
 * Address the [2015 UX survey findings](https://github.com/jupyter/design/blob/master/surveys/2015-notebook-ux/analysis/report_dashboard.ipynb)
     * Version control (via git in particular)
     * Robust text and code editing (like in Emacs, Vim, Sublime, PyCharm)
