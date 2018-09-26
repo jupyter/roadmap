@@ -28,12 +28,12 @@
 * Work on porting nbextensions to JupyterLab and building the bridge layers.
 * Theme switching.
 * Ability to hook kernels up to output areas.
+* UI for managing plugins.
 
 
 ## Future
 * Variable inspector.
-* UI for managing plugins.
-* Real-time collaboration on the notebook, text editor, and other plugins.
+* Real-time collaboration on the notebook, text editor, and other plugins.  This includes a server-side model of notebook and text documents.
 * Perform and publish accesibility audit by running an automated tool.
 * Bring our core plugins up to the level of the Web Accessibility Standards
   (http://www.w3.org/standards/webdesign/accessibility)
