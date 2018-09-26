@@ -33,7 +33,7 @@
 
 ## Future
 * Variable inspector.
-* Real-time collaboration on the notebook, text editor, and other plugins.  This includes a server-side model of notebook and text documents.
+* Real-time collaboration on the notebook, text editor, and other plugins.  This includes a server-side model of notebook and text documents.  Discussion around the topic can be found [here](https://github.com/jupyterlab/jupyterlab/issues/5382).
 * Perform and publish accesibility audit by running an automated tool.
 * Bring our core plugins up to the level of the Web Accessibility Standards
   (http://www.w3.org/standards/webdesign/accessibility)
